@@ -1,0 +1,3 @@
+
+#inicia qtile
+qtile start
