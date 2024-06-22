@@ -1,7 +1,9 @@
 # qtileconfig
 mi configuracion de qtile con archlinux(en proceso)
 
-Lo primero que hago es hacer una instalacion minima de archlinux con el comando archinstall sin ningun paquete que no sea estrictamente necesario o no sepa para que sirve
+Lo primero que hago es hacer una instalacion minima de archlinux con el comando archinstall sin ningun paquete que no sea estrictamente necesario o no sepa para que sirve                                             
+
+
 luego de instalar y reniciar, compruebo que tarjeta grafica tengo con el comando                          
 "lspci -v | grep -A1 -e VGA -e 3D"
 
