@@ -25,3 +25,9 @@ ademas, instalo vim
 y configuro el archivo de xinit, el cual no existe y hay que crearlo                                                                    
 "vim .xinitrc"                                                                                      
 (adjunto una copia de este archivo)
+
+en este punto ya se puede iniciar qtile con el comando                                                                                    
+"startx"                                                                                                              
+
+pero antes, combiene configurarlo un poco, asi que ejecutemos                                                                                                            
+"sudo pacman -S picom unclutter"                                                                                                      
