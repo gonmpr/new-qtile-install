@@ -31,3 +31,15 @@ en este punto ya se puede iniciar qtile con el comando
 
 pero antes, combiene configurarlo un poco, asi que ejecutemos                                                                                                            
 "sudo pacman -S picom unclutter"                                                                                                      
+
+
+
+(en caso de no tener el archivo config.py que vendria por defecto, descargarlo desde mi repositorio)
+
+ahora, instalo el servidor de audio pulse audio y rofi, ademas de configurarlo para la tecla m                                                                                                                          
+"sudo pacman -S audiopulse rofi"
+
+
+
+
+
