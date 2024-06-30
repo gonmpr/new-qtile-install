@@ -81,4 +81,9 @@ instalo fuentes de ubuntu mono, firacode, simbolos(52 y 53) y roboto mono(58) ya
 'sudo pacman -S nerd-fonts'                                                                                                                                                                              
 
 
+cree  configure un tema de rofi(estilo1.rasi), el cual debe ser puesto en el directorio                                                                                                                                                      
+~/.local/share/rofi/themes/estilo1.rasi                                                                                                                                                                                                                                      
+y en caso de no encontrarse en la lista de temas, ejecutar:                                                                                                                                                      
+'rofi -show run -theme ~/.local/share/rofi/themes/blue.rasi'                                                                                                                                                      
+
 
