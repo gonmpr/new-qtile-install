@@ -306,7 +306,7 @@ $BASH_COLOR_Red    +------------------------------------------------------------
 $BASH_COLOR_Red    |-------------------->$BASH_COLOR_BrownOrange \s \\\r (\m)                 \n\
 $BASH_COLOR_Red    |--------------------------->$BASH_COLOR_BrownOrange Users \u (\l) \b          \n\
 $BASH_COLOR_Red    |---------------------->$BASH_COLOR_BrownOrange \\\t \d                      \n\
-$BASH_COLOR_Red    +--------------------------------------------------------------------->\n$BASH_COLOR_Black\
+$BASH_COLOR_Red    +--------------------------------------------------------------------->\n$BASH_COLOR_Red\
 "
 }
 
@@ -317,7 +317,7 @@ $BASH_COLOR_Red    +------------------------------------------------------------
 $BASH_COLOR_Red    |-------------------->$BASH_COLOR_BrownOrange \s \\\r (\m)                 \n\
 $BASH_COLOR_Red    |--------------------------->$BASH_COLOR_BrownOrange Users \u (\l) \b          \n\
 $BASH_COLOR_Red    |---------------------->$BASH_COLOR_BrownOrange \\\t \d                      \n\
-$BASH_COLOR_Red    +--------------------------------------------------------------------------->\n$BASH_COLOR_Black\
+$BASH_COLOR_Red    +--------------------------------------------------------------------------->\n$BASH_COLOR_Red\
 "
 }
 
@@ -329,7 +329,7 @@ $BASH_COLOR_Red    +----------------------------------->\n\
 $BASH_COLOR_Red    |->$BASH_COLOR_BrownOrange \s \\\r (\m)                 \n\
 $BASH_COLOR_Red    |-------->$BASH_COLOR_BrownOrange Users \u (\l) \b          \n\
 $BASH_COLOR_Red    |--->$BASH_COLOR_BrownOrange \\\t \d                      \n\
-$BASH_COLOR_Red    +----------------------------------->\n$BASH_COLOR_Black\
+$BASH_COLOR_Red    +----------------------------------->\n$BASH_COLOR_Red\
 "
 }
 
