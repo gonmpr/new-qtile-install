@@ -50,15 +50,17 @@ e instalo brave con los comandos
 
 y añado su atajo a la 'b' con 'brave-browser-nightly' en este caso
 
-instalo ranger(explorador de archivos)                                                                                                                                                                                                                      
-"sudo pacman -S ranger"                                                                                                                                                                                                                      
-y añado su atajo a la 'a' con 'alacritty -e ranger' ya que si agrego 'ranger' sólo, no se ejecutaria.                                                                                                                                                                          
+instalo midnight commander(archivos) con 
+"sudo pacman -S mc"                                                                                                                                                                                                                      
+y añado su atajo a la 'a' con 'alacritty -e mc' ya que si agrego 'mc' sólo, no se ejecutaria.                                                                                                                                                                          
 
 creo y edito el autostart.sh, ademas de agregar su llamada en la configuracion de qtile,                                                                                                                                                    
 de momento, queda vacia, pero debo agregarle permisos de ejecucion con el comando 'chmod +x .config/qtile/autostart.sh'                                                                                                                                                                                              
 instalo arandr paar configurar la resolucion de la pantalla                                                                                                                                                                                                                    
 "sudo pacman -S arandr"                                                                                                                                                                                                                                        
 
+instalo psutil para el widget de net(red) con 
+"sudo pacman -S python-psutil"
 
 para configurar el audio:                                                                                                                                                                                                                                        
 'sudo pacman -S pipewire pipewire-pulse'                                                                                                                                                                                                           
@@ -82,8 +84,13 @@ instalo fuentes de ubuntu mono, firacode, simbolos(52 y 53) y roboto mono(58) ya
 
 
 cree  configure un tema de rofi(estilo1.rasi), el cual debe ser puesto en el directorio                                                                                                                                                      
-~/.local/share/rofi/themes/estilo1.rasi                                                                                                                                                                                                                                      
+~/.local/share/rofi/themes/estilo1.rasi                                                                                                                                                                                                              
+
 y en caso de no encontrarse en la lista de temas, ejecutar:                                                                                                                                                      
 'rofi -show run -theme ~/.local/share/rofi/themes/blue.rasi'                                                                                                                                                      
+
+
+
+
 
 
