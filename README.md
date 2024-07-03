@@ -90,7 +90,6 @@ y en caso de no encontrarse en la lista de temas, ejecutar:
 'rofi -show run -theme ~/.local/share/rofi/themes/blue.rasi'                                                                                                                                                      
 
 
-
-
+Añado el fondo de pantalla 01wallpaper el cual guardo en '/home/gonmpr/.config/qtile/.wallpaper/01wallpaper.png'                                                                                                                                                            
 
 
