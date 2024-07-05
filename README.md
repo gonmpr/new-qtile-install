@@ -80,6 +80,9 @@ y en caso de no encontrarse en la lista de temas, ejecutar:
 
 Añado el fondo de pantalla 01wallpaper el cual guardo en '/home/gonmpr/.config/qtile/.wallpaper/01wallpaper.png'                                                                                                                                                            
 agrego un menu de reinicio y apago con rofi con un script que guardo en /home/gonmpr/.config/rofi/                                                                        
+
+instalo cowfortune  y agrego su ejecucion al .bashrc                                                                                                                                                                                      
+'sudo pacman -S cowfortune'                                                                                                                                                                                                                              
 y con el comando siguiente asociado a la q                                                                                                                                                  
 ' rofi -show power-menu -modi "power-menu:/home/gonmpr/.config/rofi/rofi-power-menu --choices=shutdown/reboot" '                                                                              
 
