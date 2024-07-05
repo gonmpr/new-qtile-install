@@ -39,7 +39,7 @@ pero antes, combiene configurarlo un poco, asi que ejecutemos
 (en caso de no tener el archivo config.py que vendria por defecto, descargarlo desde mi repositorio)
 
 ahora, instalo el servidor de audio pulse audio y rofi, ademas de configurarlo para la tecla m                                                                                                                            
-"sudo pacman -S audiopulse rofi"
+"sudo pacman -S pulseaudio rofi"
 
 instalo yay con el comando                                                                                                                                                                      
 "sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si"                                                                                                                
@@ -62,23 +62,11 @@ instalo arandr paar configurar la resolucion de la pantalla
 instalo psutil para el widget de net(red) con 
 "sudo pacman -S python-psutil"
 
-para configurar el audio:                                                                                                                                                                                                                                        
-'sudo pacman -S pipewire pipewire-pulse'                                                                                                                                                                                                           
-en caso de que no se instale                                                                                                                                                                                                           
-'sudo pacman -S pipewire-media-session'                                                                                                                                                                                                           
-y como cliente de audio uso pavucontrol  y volumeicon, para eso, icono de volumen en la barra                                                                                                                                                                                                          
-'sudo pacman -S pavucontrol volumeicon'                                                                                                                                                                                                           
+                                                                                                                                                                                                          
+como cliente de audio uso pavucontrol                                                                                                                                                                                                         
+'sudo pacman -S pavucontrol'                                                                                                                                                                                                           
 y copia al archivo .xinitrc:                                                                                                                                                                                                           
-
-  volumeicon &
-  
-  /usr/bin/pipewire &                                                                                                                                                                                                           
-  /usr/bin/pipewire-pulse &                                                                                                                                                                                                           
-  /usr/bin/pipewire-media-session &                                                                                                                                                                                                           
-y reinicio.                                                                                                                                                                                                           
-
-cabe aclarar que volumeicon precisa algunas configuraciones, no es que este bugueado.                                                                                                                                                                              
-
+                                                                                                                                                                                                                                                                                                                                                              
 instalo fuentes de ubuntu mono, firacode, simbolos(52 y 53) y roboto mono(58) ya que uso roboto mono nerd font bold                                                                                                                                                       
 'sudo pacman -S nerd-fonts'                                                                                                                                                                              
 
