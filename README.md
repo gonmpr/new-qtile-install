@@ -76,6 +76,9 @@ sudo pacman -S  rofi
 ```
                                                                                                                                                                                                                                         
 ###AUDIO
+                                                                                                                                                                                                                          
+
+
 En el caso del audio, uso Pulseaudio y Pavucontrol
 ```
 sudo pacman -S pulseaudio pavucontrol
