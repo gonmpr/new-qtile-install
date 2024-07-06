@@ -76,7 +76,7 @@ sudo pacman -S  rofi
 ```
                                                                                                                                                                                 
                                                                                                                                                                                                                                         
-###AUDIO
+### AUDIO
                                                                                                                                                                                                                           
 
 
