@@ -2,9 +2,9 @@
 mi configuracion de qtile con archlinux
 
 
------------------------------------                                                                                                                                                                                               
-Instalando Qtile                                                                                                                                                                                               
------------------------------------                                                                                                                                                                                                
+                                                                                                                                                                                         
+## Instalando Qtile                                                                                                                                                                                               
+                                                                                                                                                                                                
                                                                                                                                                                                                
 Lo primero que hago es hacer una instalacion minima de archlinux con el comando archinstall sin ningun paquete que no sea estrictamente necesario o no sepa para que sirve                                             
 
