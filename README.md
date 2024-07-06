@@ -1,54 +1,56 @@
 # QTILE-CONFIG-BORAN
 mi configuracion de qtile boran(blue-orange) en Arch
 >[!IMPORTANT]
-> Para un paso a paso mas exacto, ver la guia berreta. Tener en cuenta donde debe ser copiado cada archivo para su correcta ejecución
+> Para un paso a paso mas exacto, ver la guia berreta. Tener en cuenta donde debe ser copiado cada archivo para su correcta ejecución,
+>el nombre del usuario es importante para varios archivos ```gonmpr```
 
                                                                                                                                                                                          
 ## INSTALANDO QTILE                                                                                                                                                                                            
                                                                                                                                                                                                 
                                                                                                                                                                         
 
+>[!NOTE]
+> Realizo una instalacion limpia y y de entorno minima con ```archinstall``` solo instalando lo necesario
 
-luego de instalar y reniciar, compruebo que tarjeta grafica tengo                        
+Compruebo que tarjeta grafica tengo.                     
 ```
 lspci -v | grep -A1 -e VGA -e 3D
 ```
 
-
-posteriormente, eligo los controladores para mi grafica                      
+Posteriormente, eligo los controladores para mi grafica                      
 ```
 sudo pacman -Ss xf86-video
 ```
+
 >[!NOTE]
 > En mi caso serian los de AMD
 ```
 sudo pacman -Ss xf86-video-amdgpu
 ```
 
-posterior a esto, instalo el xorg con el xinit y las apps y la fuente necesaria para que funcione qtile
+Ahora, instalo el xorg con el xinit y las apps y la fuente necesaria para que funcione Qtile
 ```
 sudo pacman -S xorg-server xorg-xinit xorg-apps xorg-fonts-misc
 ```
 
 
-ahora, instalo qtile y la terminal, en mi caso alacritty 
+Instalo Qtile y la terminal, en mi caso Alacritty 
 ```
 sudo pacman -S qtile alacritty
 ```
 
-luego instalo vim y code
+Luego instalo vim y Visual Studio Code
 ```
 sudo pacman -S vim code
 ```
 
-y configuro el archivo de xinit, el cual no existe y hay que crearlo                                                                    
->[!NOTE]
-> Ver .xinitrc adjunto al repositorio.
+Y configuro el archivo de xinit, el cual no existe y hay que crearlo                                                                    
+
 ```
 vim .xinitrc                                                                                      
 ```
 
-en este punto ya se puede iniciar qtile a traves de xorg                                                                                    
+En este punto ya se puede iniciar Qtile a traves de xorg                                                                                    
 ```
 startx
 ```
@@ -56,12 +58,12 @@ startx
 
 ## INSTALACIONES NECESARIAS
 
-instalo yay con el comando    
+Instalo Yay con el comando    
 ```
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si                                                                                                              
 ```
 
-instalo fuentes de ubuntu mono, firacode, simbolos(52 y 53) y roboto mono(58) ya que uso roboto mono nerd font bold                                                                                                                                                       
+Instalo las fuentes de ubuntu mono, firacode, simbolos(52 y 53) y roboto mono(58) ya que uso roboto mono nerd font bold                                                                                                                                                       
 ```
 sudo pacman -S nerd-fonts 
 ```
@@ -73,21 +75,21 @@ sudo pacman -S  rofi
 ```
 
 ###AUDIO
-en el caso del audio, uso pulseaudio y pavucontrol
+En el caso del audio, uso Pulseaudio y Pavucontrol
 ```
 sudo pacman -S pulseaudio pavucontrol
 ```
 
 ### NAVEGADOR
 
-ya habiendo instalado yay, puedo instalar brave
+Ya habiendo instalado Yay, puedo instalar Brave
 ```
 yay -S brave-nightly-bin
 ```
 
 ### EXPLORADOR DE ARCHIVOS
 
-Puedo usar tanto midnight commander como ranger
+Puedo usar tanto Midnight Commander como Ranger
 ```
 sudo pacman -S mc ranger
 ```
@@ -95,7 +97,7 @@ sudo pacman -S mc ranger
                                                                                                      
 ### RESOLUCION DE PANTALLA
 
-instalo arandr para configurar la resolucion                                                                                                                                                                                                                 
+Instalo Arandr para configurar la resolucion                                                                                                                                                                                                                 
 ```
 sudo pacman -S arandr
 ```                                                                                                                                                                                                                                     
@@ -103,7 +105,7 @@ sudo pacman -S arandr
 
 ## INSTALACIONES ADICIONALES                                                                           
 
-instalo cowfortune                                                                                                                                                                                      
+Instalo CowFortune                                                                                                                                                                                      
 ```  
 sudo pacman -S cowfortune
 ```
