@@ -5,13 +5,13 @@ mi configuracion de qtile con archlinux
                                                                                                                                                                                          
 ## Instalando Qtile                                                                                                                                                                                               
                                                                                                                                                                                                 
-                                                                                                                                                                                               
-Lo primero que hago es hacer una instalacion minima de archlinux con el comando archinstall sin ningun paquete que no sea estrictamente necesario o no sepa para que sirve                                             
+                                                                                                                                                                        
 
 
 luego de instalar y reniciar, compruebo que tarjeta grafica tengo con el comando                          
-"lspci -v | grep -A1 -e VGA -e 3D"
-
+```
+lspci -v | grep -A1 -e VGA -e 3D
+```
 posteriormente, busco los mejores controladores para mi tarjeta de video en la lista mostrada con el comando                      
 "sudo pacman -Ss xf86-video"
 
