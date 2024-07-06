@@ -74,6 +74,7 @@ Uso Rofi
 ```
 sudo pacman -S  rofi
 ```
+                                                                                                                                                                                
                                                                                                                                                                                                                                         
 ###AUDIO
                                                                                                                                                                                                                           
