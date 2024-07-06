@@ -2,7 +2,7 @@
 mi configuracion de qtile boran(blue-orange) en Arch
 >[!IMPORTANT]
 > Para un paso a paso mas exacto, ver la guia berreta. Tener en cuenta donde debe ser copiado cada archivo para su correcta ejecución,
->el nombre del usuario es importante para varios archivos ```gonmpr```
+>el nombre del usuario ```gonmpr``` es importante para varios archivos, pero puede ser cambiado en cada archivo 
 
                                                                                                                                                                                          
 ## INSTALANDO QTILE                                                                                                                                                                                            
