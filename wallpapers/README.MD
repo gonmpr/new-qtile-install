@@ -1,1 +1,1 @@
-GUARDAR EN /HOME/GONMPR/.CONFIG/QTILE/
+GUARDAR EN ```/home/gonmpr/.config/qtile/```
