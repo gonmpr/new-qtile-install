@@ -75,12 +75,7 @@ keys = [
     #la direccion seguida de 'power-menu' es el path donde esta el script, y la condicion choices al final se puede quitar para ver todas las opciones
     Key([mod], "q", lazy.spawn('rofi -show power-menu -modi "power-menu:/home/gonmpr/.config/rofi/rofi-power-menu --choices=shutdown/reboot" -theme estilo1-powermenu-only'), desc="Abre Rofi(apagado/reincio)"),
     Key([mod], "b", lazy.spawn('brave-browser-nightly'), desc="Abre Brave"),
-    Key([mod], "a", lazy.spawn('alacritty -e mc'), desc="Abre midnight commander (Explorador de archivos)"),
-
-    #---AUDIO---#
-    #Key([mod], "0", lazy.spawn('amixer -q set Master toggle'), desc="Activa/desactiva el audio"),
-    #Key([mod], "=", lazy.spawn('amixer -c 0 sset Master 1+ unmute'), desc="Sube el volumen"),
-    #Key([mod], "-", lazy.spawn('amixer -c 0 sset Master 1- unmute'), desc="Baja el volumen"),
+    Key([mod], "a", lazy.spawn('alacritty -e ranger'), desc="Abre Ranger (Explorador de archivos)"),
 
 
 
@@ -203,7 +198,7 @@ screens = [
             [
                 separator(False, 2),   #separador invisble con 2 de separacion            
 
-                separator(True, 5),     # separador visible con 8 de separacion
+                separator(True, 5),     # separador visible con 5 de separacion
 
                 widget.GroupBox(
                     margin_y = 2,
@@ -231,7 +226,10 @@ screens = [
 
                 widget.WindowName(parse_text=parseLargeNames, max_chars = 32), 
 
-
+                widget.Systray(),
+               
+                separator(True, 5),
+                
                 widget.Pomodoro(
                     background='#C15F5F',
                     color_inactive=barColor
@@ -254,11 +252,8 @@ screens = [
                     format = "%H:%M %p",
                 ),
 
-                separator(False, 2),
-
-                widget.Systray(),
-
-                separator(False, 5),
+                
+                separator(False, 7),
 
             ],
             barSize,
