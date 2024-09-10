@@ -1,81 +1,57 @@
-
-import os, subprocess
-from libqtile import bar, layout, qtile, widget, hook
+import subprocess, os
+from libqtile import bar, layout, qtile, widget, hook, extension
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 from libqtile.utils import guess_terminal
 
-
-
-
-
-#---VARIABLES---#
 mod = "mod4"
-yellow_heart = '#C69749' #usado en el focus y como active color
-barSize = 24
-barColor = '#1E222A'
-barFont = "RobotoMono Nerd Font Bold"
-barFontSize = 12
-group_label = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
 terminal = 'alacritty'
-
-#81C189 =green
-##a681c1 =violet
-
-
-
-
-
-
-#---FUNCIONES---#
-
-# PARA RECORTAR NOMBRES EN EL WIDGET WINDOW NAME
-def parseLargeNames(text): 
-    if '- Brave' in text: return 'Brave'
-    else: 
-        for string in [" - Code - OSS"]:
-            text = text.replace(string, "")
-            return text
-
-# WIDGET SEPARADOR
-def separator(visible = True, separacion = 5):
-    if(visible):
-        return widget.Sep(linewidth = 1, padding = separacion, foreground = "#4c566a", background = barColor)
-    else:
-        return widget.Sep(linewidth = 1, padding = separacion, foreground = barColor, background = barColor)
-    
-# PARA EL BORDE DE LAS VENTANAS
-
-def layout_theme():
-    return {
-        "margin": 0,
-        "border_width": 1,
-        "border_focus": yellow_heart,
-        "border_normal": "#20242C",
-    }
-
-
-
-
-
-
-
-
-
-
-
+color_yellow = '#C69749'
+font = 'RobotoMono Nerd Font Bold'
 
 
 
 keys = [
     
-    #---ESENCIALES---#
-    Key([mod], "Return", lazy.spawn(terminal), desc="abre Alacritty"),
-    Key([mod], "m", lazy.spawn('rofi -show drun'), desc="Abre Rofi(menu)"),
-    #la direccion seguida de 'power-menu' es el path donde esta el script, y la condicion choices al final se puede quitar para ver todas las opciones
-    Key([mod], "q", lazy.spawn('rofi -show power-menu -modi "power-menu:/home/gonmpr/.config/rofi/rofi-power-menu --choices=shutdown/reboot" -theme estilo1-powermenu-only'), desc="Abre Rofi(apagado/reincio)"),
-    Key([mod], "b", lazy.spawn('brave-browser-nightly'), desc="Abre Brave"),
-    Key([mod], "a", lazy.spawn('alacritty -e ranger'), desc="Abre Ranger (Explorador de archivos)"),
+    Key([mod], "a", lazy.spawn('kitty -e ranger'), desc="Launch Ranger"),
+    Key([mod], "b", lazy.spawn('chromium'), desc="Launch Chromium"),
+    Key([mod], "c", lazy.spawn('spectacle -rb'), desc="Launch Spectacle"),
+
+
+    Key([mod], 'm', lazy.run_extension(extension.J4DmenuDesktop(
+        dmenu_prompt = '',
+        j4dmenu_command = 'j4-dmenu-desktop',
+        background="#000000",
+        foreground="#fff",  
+        selected_background=color_yellow,
+        selected_foreground="#000",
+        dmenu_font = font,     
+        dmenu_ignorecase = True,
+    ))),
+
+
+    Key([mod], 'x', lazy.run_extension(extension.CommandSet(
+    commands={
+        'Code': 'code /home/gonmpr/workspace',
+        'Configuracion' : 'code /home/gonmpr/.config/qtile',
+        'Apagar': 'poweroff',
+        'Salir de Qtile' : 'pkill qtile',
+        
+        
+        },
+        background="#000000",
+        foreground="#fff",  
+        selected_background=color_yellow,
+        selected_foreground="#000",
+        dmenu_font = font,     
+        dmenu_ignorecase = True
+
+            )
+        )
+    ),
+
+
+
 
 
 
@@ -87,31 +63,39 @@ keys = [
     Key([mod], "j", lazy.layout.down(), desc="Move focus down"),
     Key([mod], "k", lazy.layout.up(), desc="Move focus up"),
     Key([mod], "space", lazy.layout.next(), desc="Move window focus to other window"),
-
+    # Move windows between left/right columns or move up/down in current stack.
+    # Moving out of range in Columns layout will create new column.
     Key([mod, "shift"], "h", lazy.layout.shuffle_left(), desc="Move window to the left"),
     Key([mod, "shift"], "l", lazy.layout.shuffle_right(), desc="Move window to the right"),
     Key([mod, "shift"], "j", lazy.layout.shuffle_down(), desc="Move window down"),
     Key([mod, "shift"], "k", lazy.layout.shuffle_up(), desc="Move window up"),
-
+    # Grow windows. If current window is on the edge of screen and direction
+    # will be to screen edge - window would shrink.
     Key([mod, "control"], "h", lazy.layout.grow_left(), desc="Grow window to the left"),
     Key([mod, "control"], "l", lazy.layout.grow_right(), desc="Grow window to the right"),
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
     Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
-
-
-
-
-
-
-
+    # Toggle between split and unsplit sides of stack.
+    # Split = all windows displayed
+    # Unsplit = 1 window displayed, like Max layout, but still with
+    # multiple stack panes
     Key(
         [mod, "shift"],
         "Return",
         lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack",
     ),
-
+    Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
+    
+    
+    
+    
+    
+    
+    
+    
+    # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key(
@@ -126,15 +110,9 @@ keys = [
     Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 ]
 
-
-
-
-
-
-
-
-
-
+# Add key bindings to switch VTs in Wayland.
+# We can't check qtile.core.name in default config as it is loaded before qtile is started
+# We therefore defer the check until the key binding is run by using .when(func=...)
 for vt in range(1, 8):
     keys.append(
         Key(
@@ -146,131 +124,82 @@ for vt in range(1, 8):
     )
 
 
-groups = [Group(i) for i in group_label
-]
+groups = [Group(i) for i in "123456789"]
 
-for i,group in enumerate(groups):
-    desktopNum = str(i+1)
+for i in groups:
     keys.extend(
         [
-           
+            # mod + group number = switch to group
             Key(
                 [mod],
-                desktopNum,
-                lazy.group[group.name].toscreen(),
-                desc="Switch to group {}".format(group.name),
+                i.name,
+                lazy.group[i.name].toscreen(),
+                desc="Switch to group {}".format(i.name),
             ),
-           
+            # mod + shift + group number = switch to & move focused window to group
             Key(
                 [mod, "shift"],
-                desktopNum,
-                lazy.window.togroup(group.name, switch_group=True),
-                desc="Switch to & move focused window to group {}".format(group.name),
+                i.name,
+                lazy.window.togroup(i.name, switch_group=True),
+                desc="Switch to & move focused window to group {}".format(i.name),
             ),
+            # Or, use below if you prefer not to switch to that group.
+            # # mod + shift + group number = move focused window to group
+            # Key([mod, "shift"], i.name, lazy.window.togroup(i.name),
+            #     desc="move focused window to group {}".format(i.name)),
         ]
     )
 
-
-
 layouts = [
-    layout.Columns(**layout_theme()),
-    layout.Max(),
+    layout.Columns(margin = 0, border_focus = color_yellow, border_normal = '#20242C', border_width=1),
 ]
 
-
-
-
-
-
-
-
 widget_defaults = dict(
-    font=barFont,
-    fontsize=barFontSize,
+    font=font,
+    fontsize=13,
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
-
 
 screens = [
     Screen(
         top=bar.Bar(
             [
-                separator(False, 2),   #separador invisble con 2 de separacion            
-
-                separator(True, 5),     # separador visible con 5 de separacion
-
-                widget.GroupBox(
-                    margin_y = 2,
-                    margin_x = 3,
-                    padding_y = 2,
-                    padding_x = 3,
-                    borderwidth = 0,
-                    disable_drag = True,
-                    active = '#767780',
-                    inactive = "#2e3440",
-                    rounded = False,
-                    highlight_method = "text",
-                    this_current_screen_border = yellow_heart,
-                    background=barColor,
-                    foreground = "#4c566a",
-                ),
-
-                separator(True, 5),
                 
+                widget.GroupBox(highlight_method = 'text', this_current_screen_border = color_yellow, padding=0),
                 widget.Prompt(),
-
-                separator(False, 10),
-
-                widget.TextBox('>>', foreground=yellow_heart),
-
-                widget.WindowName(parse_text=parseLargeNames, max_chars = 32), 
-
+                widget.TextBox(' >> ', foreground = color_yellow),
+                widget.WindowName(),
+                
+                
+                
+                widget.TextBox('[', foreground = color_yellow),
                 widget.Systray(),
-               
-                separator(True, 5),
-                
-                widget.Pomodoro(
-                    background='#C15F5F',
-                    color_inactive=barColor
-                ),
-
-                separator(False, 10),
-
-                widget.Volume(
-                    step=1,
-                    foreground = barColor,
-                    background= '#a681c1'
-                ),
-
-                separator(False, 10),
-
-                widget.Clock(
-                    background="#81a1c1",
-                    foreground = barColor,  
-                    fontsize = 12, 
-                    format = "%H:%M %p",
-                ),
-
-                
-                separator(False, 7),
-
+                widget.TextBox('] ', foreground = color_yellow),
+                widget.TextBox('[ ', foreground = color_yellow),
+                widget.Pomodoro(color_inactive = '#fff', color_active= '#FF0000', color_break=color_yellow,),
+                widget.TextBox(' - ', foreground = color_yellow),
+                widget.Volume(),
+                widget.Sep(padding =10, foreground = "#000000"),
+                widget.TextBox('-', foreground = color_yellow),
+                widget.Sep(padding =10, foreground = "#000000"),
+                widget.Clock(format="%d-%m-%Y %a %I:%M %p"),
+                widget.TextBox(']', foreground = color_yellow),
             ],
-            barSize,
-            background=barColor
-
+            24,
+            # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
+            # border_color=["ff00ff", "000000", "ff00ff", "000000"]  # Borders are magenta
         ),
-        wallpaper='/home/gonmpr/.config/qtile/.wallpaper/01wallpaper.png',
-        wallpaper_mode='fill'
-        
         # You can uncomment this variable if you see that on X11 floating resize/moving is laggy
         # By default we handle these events delayed to already improve performance, however your system might still be struggling
         # This variable is set to None (no cap) by default, but you can set it to 60 to indicate that you limit it to 60 events per second
         # x11_drag_polling_rate = 60,
+        wallpaper='/home/gonmpr/.config/qtile/01wallpaper.png',
+        wallpaper_mode='fill'
     ),
 ]
 
-
+# Drag floating layouts.
 mouse = [
     Drag([mod], "Button1", lazy.window.set_position_floating(), start=lazy.window.get_position()),
     Drag([mod], "Button3", lazy.window.set_size_floating(), start=lazy.window.get_size()),
@@ -310,13 +239,17 @@ wl_input_rules = None
 wl_xcursor_theme = None
 wl_xcursor_size = 24
 
-
+# XXX: Gasp! We're lying here. In fact, nobody really uses or cares about this
+# string besides java UI toolkits; you can see several discussions on the
+# mailing lists, GitHub issues, and other WM documentation that suggest setting
+# this string if your java app doesn't work correctly. We may as well just lie
+# and say that we're a working one by default.
+#
+# We choose LG3D to maximize irony: it is a 3D non-reparenting WM written in
+# java that happens to be on java's whitelist.
 wmname = "LG3D"
 
-
-#Ejecuta autostart.sh
 @hook.subscribe.startup_once
 def autostart():
-
-        script = os.path.expanduser("~/.config/qtile/autostart.sh")
-        subprocess.run([script])
+    script = os.path.expanduser("~/.config/qtile/autostart.sh")
+    subprocess.run([script])
