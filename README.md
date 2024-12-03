@@ -1,14 +1,10 @@
-# QTILE-CONFIG
-mi configuracion de qtile en Arch
->[!IMPORTANT]
-> Para un paso a paso mas exacto, ver la guia berreta. Tener en cuenta donde debe ser copiado cada archivo para su correcta ejecución,
->el nombre del usuario ```gonmpr``` es importante para varios archivos, pero puede ser cambiado en cada archivo 
+# NEW QTILE INSTALL
+Como personalizar una nueva instalacion de Qtile
 
                                                                                                                                                                                          
 ## INSTALANDO QTILE                                                                                                                                                                                            
                                                                                                                                                                                                 
-                                                                                                                                                                        
-
+                                                                                                                                                                      
 >[!NOTE]
 > Realizo una instalacion limpia y y de entorno minima con ```archinstall``` solo instalando lo necesario
 
@@ -108,15 +104,7 @@ Instalo Arandr para configurar la resolucion
 ```
 sudo pacman -S arandr
 ```                                                                                                                                                                                                                                     
-                                                                                                                                                                                                                                                                                                         
-
-## INSTALACIONES ADICIONALES                                                                           
-                                                                                                                                                                                                                                        
-Instalo CowFortune                                                                                                                                                                                      
-```  
-sudo pacman -S cowfortune
-```
-                                                                                                                                                                                                                                        
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
 Instalo Unclutter para el mouse                                                                                                           
 ```  
 sudo pacman -S unclutter
