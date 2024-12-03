@@ -17,9 +17,7 @@ Posteriormente, eligo los controladores para mi grafica
 ```
 sudo pacman -Ss xf86-video
 ```
-                                                                                                                                                                                                                                        
->[!NOTE]
-> En mi caso serian los de AMD
+                                                                                                                                                                                    
 ```
 sudo pacman -Ss xf86-video-amdgpu
 ```
@@ -29,15 +27,14 @@ Ahora, instalo el xorg con el xinit y las apps y la fuente necesaria para que fu
 sudo pacman -S xorg-server xorg-xinit xorg-apps xorg-fonts-misc
 ```
                                                                                                                                                                                                                                         
-
 Instalo Qtile y la terminal, en mi caso Alacritty 
 ```
 sudo pacman -S qtile alacritty
 ```
-                                                                                                                                                                                                                                        
-Luego instalo vim y Visual Studio Code
+                                                                                                                                                                                                                                      
+Luego instalo vim y Visual Studio Code y Unclutter para ocultar el mouse
 ```
-sudo pacman -S vim code
+sudo pacman -S vim code  unclutter
 ```
                                                                                                                                                                                                                                         
 Y configuro el archivo de xinit, el cual no existe y hay que crearlo                                                                    
