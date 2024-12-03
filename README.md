@@ -1,5 +1,5 @@
 # NEW QTILE INSTALL
-Como personalizar una nueva instalacion de Qtile
+Como personalizar una nueva instalacion de Qtile, usando Archlinux
 
                                                                                                                                                                                          
 ## INSTALANDO QTILE                                                                                                                                                                                            
