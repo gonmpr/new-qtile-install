@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
-# give permission to the file with chmod +x
-# To Set the tty pre prompt run the following
+# Darle permisos al archivo con chmod +x
+# para establecer el tty pre prompt ejecutar lo siguiente:
 # ./ttylogin.sh >/tmp/test && sudo cp /tmp/test /etc/issue
+# la ultima linea del archivo es el arte que se va a ver al iniciar.
 
-#colours
+# Colores
+
 BASH_COLOR_RED='\033[0;31m'
-BASH_COLOR_NC='\033[0m' # No Color
+BASH_COLOR_NC='\033[0m' # Sin color
 BASH_COLOR_Black='\033[0;30m'     
 BASH_COLOR_DarkGray='\033[1;30m'
 BASH_COLOR_Red='\033[0;31m'     
@@ -30,6 +32,8 @@ BASH_COLOR_BOLD='\033[0;1m'
 BASH_COLOR_UNDERLINED='\033[0;4m'
 BASH_COLOR_BLINK='\033[0;5m'
 
+
+# Logos
 
 IFS='' read -r -d '' Logo <<"EOF"
 
