@@ -27,17 +27,17 @@ Ahora, instalo el xorg con el xinit y las apps y la fuente necesaria para que fu
 sudo pacman -S xorg-server xorg-xinit xorg-apps xorg-fonts-misc
 ```
                                                                                                                                                                                                                                         
-Instalo Qtile y la terminal, en mi caso Alacritty 
+Instalo Qtile y la terminal, en mi caso Alacritty, ademas de Vim y Git
 ```
-sudo pacman -S qtile alacritty
+sudo pacman -S qtile alacritty vim git
 ```
-                                                                                                                                                                                                                                      
-Luego instalo vim y Visual Studio Code y Unclutter para ocultar el mouse
+
+Copio mis archivos de configuracion de qtile, ssh_login, .xinitrc y autostart.sh, ademas de la configuracion de picom
 ```
-sudo pacman -S vim code  unclutter
-```
+git clone https://github.com/gonmpr/new-qtile-install
+```                                                                                                                                                                                                                                      
                                                                                                                                                                                                                                         
-Y configuro el archivo de xinit, el cual no existe y hay que crearlo                                                                    
+Y configuro el archivo de xinit, el cual no existe y hay que crearlo, luego de creado, puedo copiar mi archivo descargado en el paso anterior                                                                    
 
 ```
 vim .xinitrc                                                                                      
@@ -47,62 +47,35 @@ En este punto ya se puede iniciar Qtile a traves de xorg
 ```
 startx
 ```
+
+Una vez ingresamos a Qtile, lo cerramos y copiamos todos los archivos de configuracion que descargamos a sus respectivos lugares, y seguimos con la descarga de paquetes.                                                                                 
+>[!NOTE]
+> La configuracion de resolucion que se encuentra en el archivo .xinitrc es segun nuestro monitor, generar y usar  la que generemos con arandr seria lo ideal                                                                                                                                                                                                                                     
                                                                                                                                                                                                                                         
                                                                                                                                                                                                                                         
 ## INSTALACIONES NECESARIAS
-                                                                                                                                                                                                                                        
-                                                                                                                                                                                                                                        
-Instalo Yay con el comando    
-```
-sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
-```
-                                                                                                                                                                                                                                        
-Instalo las fuentes de ubuntu mono, firacode, simbolos(52 y 53) y roboto mono(58) ya que uso roboto mono nerd font bold                                                                                                                                                       
+fonts: simbols(52,53), ubuntu mono,firacode,roboto mono(58)
 ```
 sudo pacman -S nerd-fonts 
-```
-                                                                                                                                                                                                                                        
-### MENU DE BUSQUEDA Y ARRANQUE
-Uso Rofi
-```
-sudo pacman -S  rofi
-```
-                                                                                                                                                                                
-                                                                                                                                                                                                                                        
-### AUDIO
-                                                                                                                                                                                                                          
+```                                                                                                                                                                                                                                        
 
+                                                                                                                                                                                                                                        
+```
+sudo pacman -S rofi ranger arandr dmenu j4-dmenu-desktop alsa-utils pipewire pipewire-pulse pipewire-alsa wireplumber picom-git code firefox
 
-En el caso del audio, uso Pulseaudio y Pavucontrol
+sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 ```
-sudo pacman -S pulseaudio pavucontrol
-```
+
+                                                                                                                                                                                                                                        
+
+                                                                                                                                                                                                                                        
+                                                                                                                                                                        
+                                                                                                                                                                                                                               
+
                                                                                                                                                                                                                                         
                                                                                                                                                                                                                                         
-### NAVEGADOR
-                                                                                                                                                                                                                                        
-Ya habiendo instalado Yay, puedo instalar Brave
-```
-yay -S brave-nightly-bin
-```
-                                                                                                                                                                                                                                        
-                                                                                                                                                                                                                                        
-### EXPLORADOR DE ARCHIVOS
-                                                                                                                                                                                                                                        
-Puedo usar tanto Midnight Commander como Ranger
-```
-sudo pacman -S mc ranger
-```
+
                                                                                                                                                                                                                                         
                                                                                                      
-### RESOLUCION DE PANTALLA
-                                                                                                                                                                                                                                        
-Instalo Arandr para configurar la resolucion                                                                                                                                                                                                                 
-```
-sudo pacman -S arandr
-```                                                                                                                                                                                                                                     
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
-Instalo Unclutter para el mouse                                                                                                           
-```  
-sudo pacman -S unclutter
-```  
+                                                                                                                                                                                                                  
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
