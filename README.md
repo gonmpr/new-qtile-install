@@ -54,7 +54,7 @@ Una vez ingresamos a Qtile, lo cerramos y copiamos todos los archivos de configu
                                                                                                                                                                                                                                         
                                                                                                                                                                                                                                         
 ## INSTALACIONES NECESARIAS
-fonts: simbols(52,53), ubuntu mono,firacode,roboto mono(58)
+fonts: 28 52 53 58 64 65
 ```
 sudo pacman -S nerd-fonts 
 ```                                                                                                                                                                                                                                        
