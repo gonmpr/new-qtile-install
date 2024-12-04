@@ -1,5 +1,5 @@
 # NEW QTILE INSTALL
-Como personalizar una nueva instalacion de Qtile, usando Archlinux
+Como personalizar una nueva instalacion de Qtile - Archlinux
 
                                                                                                                                                                                          
 ## INSTALANDO QTILE                                                                                                                                                                                            
@@ -50,8 +50,8 @@ startx
 
 Una vez ingresamos a Qtile, lo cerramos y copiamos todos los archivos de configuracion que descargamos a sus respectivos lugares, y seguimos con la descarga de paquetes.                                                                                 
 >[!NOTE]
-> La configuracion de resolucion y de mouse que se encuentra en el archivo .xinitrc(resolucion) y autostart.sh(mouse es segun nuestro monitor y mouse,
->  para la resolucion generar nuevamente con arandr seria lo ideal, y para el mouse solo hay que cambiar el id del mouse que nos aparezca con el comando xinput                                                                                                                                                                                                                                   
+> La configuracion de resolucion y de mouse que se encuentra en el archivo .xinitrc(resolucion) y autostart.sh (mouse) es segun nuestro monitor y mouse,
+>  para la resolucion generar nuevamente con arandr seria lo ideal, y para el mouse solo hay que cambiar el ID del mouse que nos aparezca con el comando xinput                                                                                                                                                                                                                                   
                                                                                                                                                                                                                                         
                                                                                                                                                                                                                                         
 ## INSTALACIONES NECESARIAS
