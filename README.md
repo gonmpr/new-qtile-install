@@ -1,6 +1,8 @@
 # NEW QTILE INSTALL
-Como personalizar una nueva instalacion de Qtile - Archlinux
+My configuration for a new clean Qtile/Archlinux installation
 
+>[!NOTE]
+>README is in Spanish
                                                                                                                                                                                          
 ## INSTALANDO QTILE                                                                                                                                                                                            
                                                                                                                                                                                                 
