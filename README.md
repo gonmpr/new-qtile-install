@@ -64,7 +64,7 @@ sudo pacman -S nerd-fonts
 
                                                                                                                                                                                                                                         
 ```
-sudo pacman -S rofi ranger arandr dmenu j4-dmenu-desktop alsa-utils pipewire pipewire-pulse pipewire-alsa wireplumber picom-git code firefox
+sudo pacman -S rofi ranger arandr dmenu j4-dmenu-desktop alsa-utils pipewire pipewire-pulse pipewire-alsa wireplumber picom-git code helix firefox
 
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 ```
