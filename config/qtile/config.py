@@ -14,7 +14,8 @@ font = 'RobotoMono Nerd Font Bold'
 keys = [
     
     Key([mod], "a", lazy.spawn('alacritty -e ranger'), desc="Launch Ranger"),
-    Key([mod], "b", lazy.spawn('firefox'), desc="Launch Chromium"),
+    Key([mod], "c", lazy.spawn('alacritty -e subl'), desc="Launch Sublime text"),
+    Key([mod], "b", lazy.spawn('firefox'), desc="Launch Firefox"),
 
 
     Key([mod], 'm', lazy.run_extension(extension.J4DmenuDesktop(
@@ -31,11 +32,11 @@ keys = [
 
     Key([mod], 'x', lazy.run_extension(extension.CommandSet(
     commands={
-        'Code': 'code /home/gonmpr/workspace',
-        'Configuracion' : 'code /home/gonmpr/.config/qtile',
-        'Apagar': 'poweroff',
-        'Salir de Qtile' : 'pkill qtile',
         
+        'Apagar': 'poweroff',
+        'Reiniciar': 'reboot',
+        'Salir de Qtile' : 'pkill qtile',
+        'Configuracion' : 'code /home/gonmpr/.config/qtile',
         
         },
         background="#000000",
