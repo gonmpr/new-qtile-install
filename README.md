@@ -64,11 +64,13 @@ sudo pacman -S nerd-fonts
 
                                                                                                                                                                                                                                         
 ```
-sudo pacman -S rofi ranger arandr dmenu j4-dmenu-desktop alsa-utils pipewire pipewire-pulse pipewire-alsa wireplumber picom-git code helix firefox
+sudo pacman -S rofi ranger arandr dmenu j4-dmenu-desktop alsa-utils pipewire pipewire-pulse pipewire-alsa wireplumber picom-git firefox
 
 sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
-```
 
+yay -S sublime-text-4
+```
+Para el sublime text habilitar el modo vim e instalar tema ayu dark
                                                                                                                                                                                                                                         
 
                                                                                                                                                                                                                                         
