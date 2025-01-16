@@ -1,8 +1,4 @@
 
-
-" install color scheme from https://github.com/srcery-colors/srcery-vim "
-
-
 " enable mouse support "
 set mouse=a
 
@@ -50,8 +46,10 @@ autocmd BufWritePre *.for :%s/\s\+$//e
 if !has('gui_running')
 	set t_Co=256
 endif
+
 " enable true colors support "
 set termguicolors
-" Vim colorscheme "
-packadd! srcery-vim
-colorscheme srcery
+
+colorscheme default
+
+imap jj <Esc>
