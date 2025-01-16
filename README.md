@@ -1,9 +1,3 @@
-# NEW QTILE INSTALL
-My configuration for a new clean Qtile/Archlinux installation
-
->[!NOTE]
->README is in Spanish
-                                                                                                                                                                                         
 ## INSTALANDO QTILE                                                                                                                                                                                            
                                                                                                                                                                                                 
                                                                                                                                                                       
