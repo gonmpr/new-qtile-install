@@ -10,40 +10,38 @@ color_yellow = '#C69749'
 font = 'RobotoMono Nerd Font Bold'
 
 
-
 keys = [
-    
-    Key([mod], "a", lazy.spawn('alacritty -e ranger'), desc="Launch Ranger"),
-    Key([mod], "c", lazy.spawn('alacritty -e subl'), desc="Launch Sublime text"),
-    Key([mod], "b", lazy.spawn('firefox'), desc="Launch Firefox"),
+
+    Key([mod], "a", lazy.spawn('alacritty -e nautilus'), desc="Launch File Browser"),
+    Key([mod], "b", lazy.spawn('firefox'), desc="Launch Web Browser"),
 
 
     Key([mod], 'm', lazy.run_extension(extension.J4DmenuDesktop(
         dmenu_prompt = '',
         j4dmenu_command = 'j4-dmenu-desktop',
         background="#000000",
-        foreground="#fff",  
+        foreground="#fff",
         selected_background=color_yellow,
         selected_foreground="#000",
-        dmenu_font = font,     
+        dmenu_font = font,
         dmenu_ignorecase = True,
     ))),
 
 
     Key([mod], 'x', lazy.run_extension(extension.CommandSet(
     commands={
-        
+
         'Apagar': 'poweroff',
         'Reiniciar': 'reboot',
         'Salir de Qtile' : 'pkill qtile',
         'Configuracion' : 'code /home/gonmpr/.config/qtile',
-        
+
         },
         background="#000000",
-        foreground="#fff",  
+        foreground="#fff",
         selected_background=color_yellow,
         selected_foreground="#000",
-        dmenu_font = font,     
+        dmenu_font = font,
         dmenu_ignorecase = True
 
             )
@@ -87,14 +85,14 @@ keys = [
         desc="Toggle between split and unsplit sides of stack",
     ),
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
@@ -165,25 +163,28 @@ screens = [
     Screen(
         top=bar.Bar(
             [
-                
+
                 widget.GroupBox(highlight_method = 'text', this_current_screen_border = color_yellow, padding=0),
                 widget.Prompt(),
                 widget.TextBox(' >> ', foreground = color_yellow),
                 widget.WindowName(),
-                
-                
-                
+
+
+
                 widget.TextBox('[', foreground = color_yellow),
                 widget.Systray(),
                 widget.TextBox('] ', foreground = color_yellow),
                 widget.TextBox('[ ', foreground = color_yellow),
-                widget.Pomodoro(color_inactive = '#fff', color_active= '#FF0000', color_break=color_yellow,),
+                widget.ThermalSensor(),
                 widget.TextBox(' - ', foreground = color_yellow),
+                widget.Battery(full_char = ':)',format = '{percent:2.0%}'),
+                widget.TextBox(' - ', foreground = color_yellow),
+
                 widget.Volume(),
                 widget.Sep(padding =10, foreground = "#000000"),
                 widget.TextBox('-', foreground = color_yellow),
                 widget.Sep(padding =10, foreground = "#000000"),
-                widget.Clock(format="%d-%m-%Y %a %I:%M %p"),
+                widget.Clock(format="%d-%m %a %I:%M %p"),
                 widget.TextBox(']', foreground = color_yellow),
             ],
             24,
